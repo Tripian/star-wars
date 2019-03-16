@@ -1,0 +1,5 @@
+# Star Wars Maze Build Ignore
+
+.vs/
+Debug/
+Project1/Debug/
