@@ -9,7 +9,7 @@ public:
 	App(const std::string& title, const int& width, const int& height);
 	~App();
 
-	void run();
+	void run( int choose );
 
 private:
 	sf::RenderWindow* window_;

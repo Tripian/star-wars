@@ -1,6 +1,8 @@
 #include "App.h"
 
 #include <iostream>
+using namespace std;
+#include <string>
 
 App::App(const std::string& title, const int& width, const int& height)
 	: title_(title),
@@ -28,7 +30,7 @@ App::~App()
 	}
 }
 
-void App::run()
+void App::run( int choose )
 {
 	while (window_->isOpen())
 	{
@@ -42,11 +44,12 @@ void App::run()
 				window_->close();
 			}
 		}
+		
 
 		//Clear everything drawn last frame
 		window_->clear();
 
-		scene_->draw(window_);
+		scene_->draw(window_, choose);
 
 		//Render everything for this frame
 		window_->display();

@@ -3,6 +3,9 @@
 #include <fstream>
 #include <iostream>
 
+#include "LukeSkywalker.h"
+#include "Yoda.h"
+
 Scene::Scene()
 {
 }
@@ -75,6 +78,8 @@ bool Scene::init(const std::string& resourcePath)
 
 	Viewport viewport(560, 440, 50, 50);
 	maze_ = new Maze(maze, maze_width, maze_height, viewport);
+	lukeSkywalker_ = new LukeSkywalker();
+	yoda_ = new Yoda();
 
 	return true;
 }
@@ -84,7 +89,14 @@ void Scene::update()
 	
 }
 
-void Scene::draw(sf::RenderWindow* window)
+void Scene::draw(sf::RenderWindow* window, int choose)
 {
 	maze_->draw(window);
+	if (choose == 1) {
+		lukeSkywalker_->draw(window);
+	}
+	
+	else if (choose == 2) {
+		yoda_->draw(window);
+	}
 }

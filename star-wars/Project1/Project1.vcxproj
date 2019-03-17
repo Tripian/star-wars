@@ -91,10 +91,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\doga\Desktop\DEV\Libraries\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Alp Eren SUKAS\Desktop\sfml\SFML-2.5.1\include;C:\Users\doga\Desktop\DEV\Libraries\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\Alp Eren SUKAS\Desktop\sfml\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Alp Eren SUKAS\Desktop\sfml\SFML-2.5.1\lib;C:\Users\doga\Desktop\DEV\Libraries\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-audio-d.lib;sfml-graphics-d.lib;sfml-network-d.lib;sfml-system-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -104,10 +104,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\doga\Desktop\DEV\Libraries\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Alp Eren SUKAS\Desktop\sfml\SFML-2.5.1\include;C:\Users\doga\Desktop\DEV\Libraries\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\Alp Eren SUKAS\Desktop\sfml\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Alp Eren SUKAS\Desktop\sfml\SFML-2.5.1\lib;C:\Users\doga\Desktop\DEV\Libraries\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-audio-d.lib;sfml-graphics-d.lib;sfml-network-d.lib;sfml-system-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -151,6 +151,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Maze.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Yoda.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
@@ -161,6 +162,7 @@
     <ClInclude Include="Maze.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Viewport.h" />
+    <ClInclude Include="Yoda.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

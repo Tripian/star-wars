@@ -17,9 +17,11 @@ public:
 
 	bool init(const std::string& resourcePath);
 	void update();
-	void draw(sf::RenderWindow* window);
+	void draw(sf::RenderWindow* window,int choose);
 
 private:
 	Maze* maze_;
+	BaseEntity* lukeSkywalker_;
+	BaseEntity* yoda_;
 };
 

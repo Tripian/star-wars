@@ -1,9 +1,9 @@
-#include "LukeSkywalker.h"
+#include "Yoda.h"
 
 #include <iostream>
 
-LukeSkywalker::LukeSkywalker()
-	: health_(3)
+Yoda::Yoda()
+	:health_(6)
 {
 	if (!hearthTexture_.loadFromFile("res/hearth.png"))
 	{
@@ -15,7 +15,17 @@ LukeSkywalker::LukeSkywalker()
 		hearthSprite_.setScale(2.0f, 2.0f);
 	}
 
-	if (!imageTexture_.loadFromFile("res/luke2.png"))
+	if (!hearthTexture2_.loadFromFile("res/hearth2.png"))
+	{
+		std::cout << "Could not load hearth texture" << std::endl;
+	}
+	else
+	{
+		hearthSprite2_.setTexture(hearthTexture2_);
+		hearthSprite2_.setScale(2.0f, 2.0f);
+	}
+
+	if (!imageTexture_.loadFromFile("res/yoda.jpg"))
 	{
 		std::cout << "Could not load hearth texture" << std::endl;
 	}
@@ -24,25 +34,25 @@ LukeSkywalker::LukeSkywalker()
 		imageSprite_.setTexture(imageTexture_);
 		//imageSprite_.setScale(2.0f, 2.0f);
 	}
-
 }
 
 
-LukeSkywalker::~LukeSkywalker()
+Yoda::~Yoda()
 {
 }
 
-void LukeSkywalker::init(const std::string& resourcePath)
-{
-
-}
-
-void LukeSkywalker::update()
+void Yoda::init(const std::string& resourcePath)
 {
 
 }
 
-void LukeSkywalker::draw(sf::RenderWindow* window)
+void Yoda::update()
+{
+
+}
+
+
+void Yoda::draw(sf::RenderWindow* window)
 {
 	sf::RectangleShape rect(sf::Vector2f(width_, height_));
 	/*sf::RectangleShape rect2(sf::Vector2f(40 / 2, 40 / 2));
@@ -50,26 +60,44 @@ void LukeSkywalker::draw(sf::RenderWindow* window)
 	rect2.setPosition(6 * 40 + 50 + 40 / 4, 5 * 40 + 50 + 40 / 4);
 	window->draw(rect2);*/
 
-	imageSprite_.setPosition(sf::Vector2f(6 * 40 + 50 , 5 * 40 + 50 ));
+	imageSprite_.setPosition(sf::Vector2f(6 * 40 + 50, 5 * 40 + 50));
 	window->draw(imageSprite_);
 
-	if (health_ >= 1) {
+	if (health_ >= 2) {
 		hearthSprite_.setPosition(sf::Vector2f(650, 50));
 		window->draw(hearthSprite_);
 	}
 
-	if (health_ >= 2) {
+	else if (health_ >= 1) {
+		hearthSprite2_.setPosition(sf::Vector2f(650, 50));
+		window->draw(hearthSprite2_);
+	}
+
+	if (health_ >= 4) {
 		hearthSprite_.setPosition(sf::Vector2f(685, 50));
 		window->draw(hearthSprite_);
 	}
 
-	if (health_ >= 3) {
+	else if (health_ >= 3) {
+		hearthSprite2_.setPosition(sf::Vector2f(685, 50));
+		window->draw(hearthSprite2_);
+	}
+
+	if (health_ >= 6) {
 		hearthSprite_.setPosition(sf::Vector2f(720, 50));
 		window->draw(hearthSprite_);
 	}
+
+	else if (health_ >= 5) {
+		hearthSprite2_.setPosition(sf::Vector2f(720, 50));
+		window->draw(hearthSprite2_);
+	}
+
+
+
 }
 
-void LukeSkywalker::destroy()
+void Yoda::destroy()
 {
 
 }

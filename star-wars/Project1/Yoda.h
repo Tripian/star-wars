@@ -4,11 +4,11 @@
 #include "Scene.h"
 #include "Character.h"
 
-class LukeSkywalker : public Character
+class Yoda : public Character
 {
 public:
-	LukeSkywalker();
-	~LukeSkywalker();
+	Yoda();
+	~Yoda();
 
 	virtual void init(const std::string& resourcePath) override;
 	virtual void update() override;
@@ -19,7 +19,10 @@ private:
 	int health_;
 	sf::Texture hearthTexture_;
 	sf::Sprite hearthSprite_;
+	sf::Texture hearthTexture2_;
+	sf::Sprite hearthSprite2_;
 	sf::Texture imageTexture_;
 	sf::Sprite imageSprite_;
+
 };
 

@@ -70,45 +70,6 @@ void Maze::draw(sf::RenderWindow* window)
 			window->draw(rect);
 		}
 	}
-
-	sf::RectangleShape rect2(sf::Vector2f(cellWidth_ / 2 , cellHeight_ / 2));
-	rect2.setFillColor(sf::Color::Red);
-	rect2.setPosition(6 * cellWidth_ + xPos + cellWidth_ / 4, 5 * cellHeight_ + yPos + cellHeight_ / 4);
-	window->draw(rect2);
-
-	sf::ConvexShape convex;
-	convex.setPointCount(6);
-	convex.setPoint(0, sf::Vector2f(0 + 615, 0 + 40));
-	convex.setPoint(1, sf::Vector2f(30 + 615, 30 + 40));
-	convex.setPoint(2, sf::Vector2f(60 + 615, 0 + 40));
-	convex.setPoint(3, sf::Vector2f(60 + 615, 30 + 40));
-	convex.setPoint(4, sf::Vector2f(30 + 615, 60 + 40));
-	convex.setPoint(5, sf::Vector2f(0 + 615, 30 + 40));
-	convex.setFillColor(sf::Color::Red);
-	window->draw(convex);
-
-	sf::ConvexShape convex2;
-	convex2.setPointCount(6);
-	convex2.setPoint(0, sf::Vector2f(0 + 685, 0 + 40));
-	convex2.setPoint(1, sf::Vector2f(30 + 685, 30 + 40));
-	convex2.setPoint(2, sf::Vector2f(60 + 685, 0 + 40));
-	convex2.setPoint(3, sf::Vector2f(60 + 685, 30 + 40));
-	convex2.setPoint(4, sf::Vector2f(30 + 685, 60 + 40));
-	convex2.setPoint(5, sf::Vector2f(0 + 685, 30 + 40));
-	convex2.setFillColor(sf::Color::Red);
-	window->draw(convex2);
-
-	sf::ConvexShape convex3;
-	convex3.setPointCount(6);
-	convex3.setPoint(0, sf::Vector2f(0 + 755, 0 + 40));
-	convex3.setPoint(1, sf::Vector2f(30 + 755, 30 + 40));
-	convex3.setPoint(2, sf::Vector2f(60 + 755, 0 + 40));
-	convex3.setPoint(3, sf::Vector2f(60 + 755, 30 + 40));
-	convex3.setPoint(4, sf::Vector2f(30 + 755, 60 + 40));
-	convex3.setPoint(5, sf::Vector2f(0 + 755, 30 + 40));
-	convex3.setFillColor(sf::Color::Red);
-	window->draw(convex3);
-
 }
 
 void Maze::destroy()
