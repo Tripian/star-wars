@@ -11,7 +11,7 @@ public:
 	~Yoda();
 
 	virtual void init(const std::string& resourcePath) override;
-	virtual void update() override;
+	virtual void update(Input * input) override;
 	virtual void draw(sf::RenderWindow* window) override;
 	virtual void destroy() override;
 

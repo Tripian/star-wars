@@ -4,7 +4,7 @@
 using namespace std;
 #include <string>
 
-App::App(const std::string& title, const int& width, const int& height)
+App::App(const std::string& title, const int& width, const int& height, int choose)
 	: title_(title),
 		width_(width),
 		height_(height),
@@ -13,7 +13,8 @@ App::App(const std::string& title, const int& width, const int& height)
 	window_ = new sf::RenderWindow(sf::VideoMode(width, height), title);
 	window_->setVerticalSyncEnabled(true);
 	scene_ = new Scene();
-	if (!scene_->init("res/Harita.txt"))
+	input_ = new Input();
+	if (!scene_->init("res/Harita.txt", choose))
 	{
 		std::cout << "Cannot initialize scene!" << std::endl;
 		exit(-1);
@@ -30,7 +31,7 @@ App::~App()
 	}
 }
 
-void App::run( int choose )
+void App::run()
 {
 	while (window_->isOpen())
 	{
@@ -45,13 +46,36 @@ void App::run( int choose )
 			}
 		}
 		
+		input_->update(window_);
+
+		/*if (input_->getKeyDown(sf::Keyboard::Left))
+		{
+			std::cout << "A" << std::endl;
+		}
+
+		else if (input_->getKeyDown(sf::Keyboard::Right))
+		{
+			std::cout << "B" << std::endl;
+		}
+
+		else if (input_->getKeyDown(sf::Keyboard::Up))
+		{
+			std::cout << "C" << std::endl;
+		}
+
+		else if (input_->getKeyDown(sf::Keyboard::Down))
+		{
+			std::cout << "D" << std::endl;
+		}*/
 
 		//Clear everything drawn last frame
 		window_->clear();
-
-		scene_->draw(window_, choose);
+		
+		scene_->update(input_);
+		scene_->draw(window_);
 
 		//Render everything for this frame
 		window_->display();
+		
 	}
 }

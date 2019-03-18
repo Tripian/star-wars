@@ -2,9 +2,9 @@
 
 #include <fstream>
 #include <iostream>
-
 #include "LukeSkywalker.h"
 #include "Yoda.h"
+#include "Input.h"
 
 Scene::Scene()
 {
@@ -15,7 +15,7 @@ Scene::~Scene()
 {
 }
 
-bool Scene::init(const std::string& resourcePath)
+bool Scene::init(const std::string& resourcePath, int choose)
 {
 	std::ifstream infile(resourcePath);
 	if (infile.is_open())
@@ -81,22 +81,26 @@ bool Scene::init(const std::string& resourcePath)
 	lukeSkywalker_ = new LukeSkywalker();
 	yoda_ = new Yoda();
 
+	if (choose == 1) {
+		player_ = new LukeSkywalker();
+	}
+
+	if (choose == 2) {
+		player_ = new Yoda();
+	}
+
 	return true;
 }
 
-void Scene::update()
+void Scene::update(Input * input)
 {
 	
+	player_->update(input);
 }
 
-void Scene::draw(sf::RenderWindow* window, int choose)
+void Scene::draw(sf::RenderWindow* window)
 {
 	maze_->draw(window);
-	if (choose == 1) {
-		lukeSkywalker_->draw(window);
-	}
-	
-	else if (choose == 2) {
-		yoda_->draw(window);
-	}
+	player_->draw(window);
+
 }

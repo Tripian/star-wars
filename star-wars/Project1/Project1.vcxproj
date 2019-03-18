@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="LukeSkywalker.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Maze.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="App.h" />
     <ClInclude Include="BaseEntity.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Location.h" />
     <ClInclude Include="LukeSkywalker.h" />
     <ClInclude Include="Maze.h" />

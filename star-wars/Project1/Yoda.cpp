@@ -46,7 +46,7 @@ void Yoda::init(const std::string& resourcePath)
 
 }
 
-void Yoda::update()
+void Yoda::update(Input * input) 
 {
 
 }

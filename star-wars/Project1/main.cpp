@@ -9,8 +9,8 @@ int main()
 	int choose;
 	cin >> choose;
 
-	App app("Default Window", 830, 600);
-	app.run(choose);
+	App app("Default Window", 830, 600,choose);
+	app.run();
 
 	return 0;
 }
