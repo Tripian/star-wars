@@ -19,13 +19,16 @@ public:
 
 private:
 	int health_;
-	int x = 290;
-	int y = 250;
 	Input* input_;
+	Maze* maze_;
+	int walls_;
 	sf::RenderWindow* window_;
 	sf::Texture hearthTexture_;
 	sf::Sprite hearthSprite_;
 	sf::Texture imageTexture_;
 	sf::Sprite imageSprite_;
+	Location playerSpawnIndex_ = Location(6, 5);
+	int x = playerSpawnIndex_.getX() * 40 + 50;
+	int y = playerSpawnIndex_.getY() * 40 + 50;
 };
 

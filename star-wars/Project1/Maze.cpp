@@ -1,5 +1,6 @@
 #include "Maze.h"
 #include "LukeSkywalker.h"
+#include "Yoda.h"
 #include <iostream>
 
 Maze::Maze(const std::vector<int>& maze, const int& mazeWidth, const int& mazeHeight, const Viewport& viewport)
@@ -27,6 +28,7 @@ Maze::Maze(const std::vector<int>& maze, const int& mazeWidth, const int& mazeHe
 	}
 
 	maze_.at(mazeWidth * playerSpawnIndex_.getY() + playerSpawnIndex_.getX()) = PLAYER_SPAWN;
+	std::cout << mazeWidth_ << std::endl;
 }
 
 
@@ -53,6 +55,8 @@ void Maze::draw(sf::RenderWindow* window)
 			{
 			case WALL:
 				rect.setFillColor(sf::Color::White);
+				walls[mazeWidth_ * j + i] = 10;
+				//std::cout << walls[31] << std::endl;
 				break;
 			case GATE:
 				rect.setFillColor(sf::Color::Blue);

@@ -1,19 +1,5 @@
 #pragma once
 
-/*
-
-	This class is just a container for variables.
-	Viewport can be used to place to place the maze whereever you want on the screen.
-	It can also be used to determine the width and height of the maze drawing
-
-	Parameters:
-		width_	-	The width of the drawing.
-		height_	-	The height of the drawing.
-		x_		-	x position on the render window
-		y_		-	y position on the render window
-
-*/
-
 class Viewport
 {
 public:

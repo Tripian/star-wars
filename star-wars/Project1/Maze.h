@@ -36,6 +36,7 @@ public:
 	void update();
 	void draw(sf::RenderWindow* window);
 	void destroy();
+	int walls[225];
 
 	const Location& getGateLocation(Gates gate);
 
@@ -49,6 +50,10 @@ public:
 		return cellHeight_;
 	}
 
+	int getWalls(int x, int y) 
+	{
+		return walls[mazeWidth_ * x + y];
+	}
 
 private:
 	std::vector<int> maze_;

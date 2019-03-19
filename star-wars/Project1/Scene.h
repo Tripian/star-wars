@@ -3,13 +3,6 @@
 #include "Maze.h"
 #include "Input.h"
 
-/*
-
-	This class is intended to encapsulate game objects on the screen.
-	Whatever you put in an instance of this class will be rendered on screen.
-
-*/
-
 class Scene
 {
 public:

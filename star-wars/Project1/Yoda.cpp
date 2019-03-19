@@ -35,7 +35,6 @@ Yoda::Yoda()
 	else
 	{
 		imageSprite_.setTexture(imageTexture_);
-		//imageSprite_.setScale(2.0f, 2.0f);
 	}
 }
 
@@ -76,16 +75,17 @@ void Yoda::update(Input * input)
 		y = y + 40;
 		imageSprite_.move(sf::Vector2f((float)x, (float)y));
 	}
+
+	if (x == 610 && y == 410) {
+		std::cout << "Kazandiniz" << std::endl;
+	}
+
 }
 
 
 void Yoda::draw(sf::RenderWindow* window)
 {
 	sf::RectangleShape rect(sf::Vector2f(width_, height_));
-	/*sf::RectangleShape rect2(sf::Vector2f(40 / 2, 40 / 2));
-	rect2.setFillColor(sf::Color::Red);
-	rect2.setPosition(6 * 40 + 50 + 40 / 4, 5 * 40 + 50 + 40 / 4);
-	window->draw(rect2);*/
 
 	imageSprite_.setPosition(sf::Vector2f((float)x, (float)y));
 	window->draw(imageSprite_);

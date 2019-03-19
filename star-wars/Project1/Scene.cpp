@@ -94,7 +94,6 @@ bool Scene::init(const std::string& resourcePath, int choose)
 
 void Scene::update(Input * input)
 {
-	
 	player_->update(input);
 }
 

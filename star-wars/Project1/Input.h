@@ -11,13 +11,10 @@ public:
 	~Input();
 	void update(sf::RenderWindow* window);
 
-	// Tuþa bastýktan sonra true döndürür
 	bool getKeyDown(sf::Keyboard::Key key);
 
-	// Tuþa basýlýysa true döndürür
 	bool getKey(sf::Keyboard::Key key);
 
-	// Tuþu býraktýktan sonra true döndürür
 	bool getKeyUp(sf::Keyboard::Key key);
 
 private:

@@ -35,11 +35,9 @@ void App::run()
 {
 	while (window_->isOpen())
 	{
-		//Poll all events for this frame
 		sf::Event event;
 		while (window_->pollEvent(event))
 		{
-			//Close button pressed
 			if (event.type == sf::Event::Closed)
 			{
 				window_->close();
@@ -48,33 +46,11 @@ void App::run()
 		
 		input_->update(window_);
 
-		/*if (input_->getKeyDown(sf::Keyboard::Left))
-		{
-			std::cout << "A" << std::endl;
-		}
-
-		else if (input_->getKeyDown(sf::Keyboard::Right))
-		{
-			std::cout << "B" << std::endl;
-		}
-
-		else if (input_->getKeyDown(sf::Keyboard::Up))
-		{
-			std::cout << "C" << std::endl;
-		}
-
-		else if (input_->getKeyDown(sf::Keyboard::Down))
-		{
-			std::cout << "D" << std::endl;
-		}*/
-
-		//Clear everything drawn last frame
 		window_->clear();
 		
 		scene_->update(input_);
 		scene_->draw(window_);
 
-		//Render everything for this frame
 		window_->display();
 		
 	}
