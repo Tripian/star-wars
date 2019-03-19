@@ -19,9 +19,8 @@ public:
 
 private:
 	int health_;
-	int control_;
-	int x;
-	int y;
+	int x = 290;
+	int y = 250;
 	Input* input_;
 	sf::RenderWindow* window_;
 	sf::Texture hearthTexture_;

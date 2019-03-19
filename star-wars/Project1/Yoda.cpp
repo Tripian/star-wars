@@ -5,6 +5,9 @@
 Yoda::Yoda()
 	:health_(6)
 {
+
+	input_ = new Input();
+
 	if (!hearthTexture_.loadFromFile("res/hearth.png"))
 	{
 		std::cout << "Could not load hearth texture" << std::endl;
@@ -25,7 +28,7 @@ Yoda::Yoda()
 		hearthSprite2_.setScale(2.0f, 2.0f);
 	}
 
-	if (!imageTexture_.loadFromFile("res/yoda.jpg"))
+	if (!imageTexture_.loadFromFile("res/yoda2.jpg"))
 	{
 		std::cout << "Could not load hearth texture" << std::endl;
 	}
@@ -48,7 +51,31 @@ void Yoda::init(const std::string& resourcePath)
 
 void Yoda::update(Input * input) 
 {
+	input_->update(window_);
 
+	if (input_->getKeyDown(sf::Keyboard::Left))
+	{
+		x = x - 40;
+		imageSprite_.move(sf::Vector2f((float)x, (float)y));
+	}
+
+	else if (input_->getKeyDown(sf::Keyboard::Right))
+	{
+		x = x + 40;
+		imageSprite_.move(sf::Vector2f((float)x, (float)y));
+	}
+
+	else if (input_->getKeyDown(sf::Keyboard::Up))
+	{
+		y = y - 40;
+		imageSprite_.move(sf::Vector2f((float)x, (float)y));
+	}
+
+	else if (input_->getKeyDown(sf::Keyboard::Down))
+	{
+		y = y + 40;
+		imageSprite_.move(sf::Vector2f((float)x, (float)y));
+	}
 }
 
 
@@ -60,7 +87,7 @@ void Yoda::draw(sf::RenderWindow* window)
 	rect2.setPosition(6 * 40 + 50 + 40 / 4, 5 * 40 + 50 + 40 / 4);
 	window->draw(rect2);*/
 
-	imageSprite_.setPosition(sf::Vector2f(6 * 40 + 50, 5 * 40 + 50));
+	imageSprite_.setPosition(sf::Vector2f((float)x, (float)y));
 	window->draw(imageSprite_);
 
 	if (health_ >= 2) {

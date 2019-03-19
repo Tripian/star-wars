@@ -7,9 +7,8 @@ LukeSkywalker::LukeSkywalker()
 {
 
 	input_ = new Input();
-	int control_ = 0;
-	int x = 6 * 40 + 50;
-	int y = 5 * 40 + 50;
+	//int x = 290;
+	//int y = 250;
 
 	if (!hearthTexture_.loadFromFile("res/hearth.png"))
 	{
@@ -21,7 +20,7 @@ LukeSkywalker::LukeSkywalker()
 		hearthSprite_.setScale(2.0f, 2.0f);
 	}
 
-	if (!imageTexture_.loadFromFile("res/luke2.png"))
+	if (!imageTexture_.loadFromFile("res/luke3.png"))
 	{
 		std::cout << "Could not load hearth texture" << std::endl;
 	}
@@ -45,50 +44,49 @@ void LukeSkywalker::init(const std::string& resourcePath)
 
 void LukeSkywalker::update(Input * input) 
 {
-	
+	//x = 290;
+	//y = 250;
 	input_->update(window_);
 
 	if (input_->getKeyDown(sf::Keyboard::Left))
 	{
-		//x = x - 40;
-		//imageSprite_.move(sf::Vector2f(x, y));
-		control_ = 1;
+		x = x - 40;
+		imageSprite_.move(sf::Vector2f((float)x, (float)y));
 	}
 
 	else if (input_->getKeyDown(sf::Keyboard::Right))
 	{
-		control_ = 2;
+		x = x + 40;
+		imageSprite_.move(sf::Vector2f((float)x, (float)y));
 	}
 
 	else if (input_->getKeyDown(sf::Keyboard::Up))
 	{
-		control_ = 3;
+		y = y - 40;
+		imageSprite_.move(sf::Vector2f((float)x, (float)y));
 	}
 
 	else if (input_->getKeyDown(sf::Keyboard::Down))
 	{
-		control_ = 4;
+		y = y + 40;
+		imageSprite_.move(sf::Vector2f((float)x, (float)y));
 	}
 }
 
 void LukeSkywalker::draw(sf::RenderWindow* window)
 {
-	int count=0;
+	
 	sf::RectangleShape rect(sf::Vector2f(width_, height_));
 	/*sf::RectangleShape rect2(sf::Vector2f(40 / 2, 40 / 2));
 	rect2.setFillColor(sf::Color::Red);
 	rect2.setPosition(6 * 40 + 50 + 40 / 4, 5 * 40 + 50 + 40 / 4);
 	window->draw(rect2);*/
 
-	if(count==0) {
-		imageSprite_.setPosition(sf::Vector2f(6 * 40 + 50, 5 * 40 + 50));
-		window->draw(imageSprite_);
-		count++;
-	}
+	imageSprite_.setPosition(sf::Vector2f((float)x, (float)y));
+	window->draw(imageSprite_);
+		
 
-	std::cout << count << std::endl;
-
-	if (control_ == 1) {
+	/*if (control_ == 1) {
 		x = x - 40;
 		imageSprite_.move(sf::Vector2f((float)x, (float)y));
 		//imageSprite_.setPosition(sf::Vector2f((float)x, (float)y));
@@ -118,7 +116,7 @@ void LukeSkywalker::draw(sf::RenderWindow* window)
 		//imageSprite_.setPosition(sf::Vector2f((float)x, (float)y));
 		window->draw(imageSprite_);
 		control_ = 0;
-	}
+	}*/
 
 	if (health_ >= 1) {
 		hearthSprite_.setPosition(sf::Vector2f(650, 50));

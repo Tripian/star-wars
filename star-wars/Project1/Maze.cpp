@@ -68,6 +68,7 @@ void Maze::draw(sf::RenderWindow* window)
 
 			rect.setPosition((i * cellWidth_) + xPos, (j * cellHeight_) + yPos);
 			window->draw(rect);
+
 		}
 	}
 }
