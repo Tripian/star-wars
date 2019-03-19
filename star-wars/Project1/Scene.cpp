@@ -94,7 +94,7 @@ bool Scene::init(const std::string& resourcePath, int choose)
 
 void Scene::update(Input * input)
 {
-	player_->update(input);
+	player_->update(input, maze_);
 }
 
 void Scene::draw(sf::RenderWindow* window)

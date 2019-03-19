@@ -12,7 +12,7 @@ public:
 	~LukeSkywalker();
 
 	virtual void init(const std::string& resourcePath) override;
-	virtual void update(Input * input)  override;
+	virtual void update(Input * input, Maze * maze)  override;
 	virtual void draw(sf::RenderWindow* window) override;
 	virtual void destroy() override;
 	
@@ -20,7 +20,7 @@ public:
 private:
 	int health_;
 	Input* input_;
-	Maze* maze_;
+	Maze* maze;
 	int walls_;
 	sf::RenderWindow* window_;
 	sf::Texture hearthTexture_;

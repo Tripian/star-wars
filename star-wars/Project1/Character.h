@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BaseEntity.h"
+#include "Maze.h"
 
 class Character : public BaseEntity
 {
@@ -9,7 +10,7 @@ public:
 	~Character() {}
 
 	virtual void init(const std::string& resourcePath) = 0;
-	virtual void update(Input * input) = 0;
+	virtual void update(Input * input, Maze * maze) = 0;
 	virtual void draw(sf::RenderWindow* window) = 0;
 	virtual void destroy() = 0;
 

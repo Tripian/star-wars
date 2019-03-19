@@ -48,7 +48,7 @@ void LukeSkywalker::init(const std::string& resourcePath)
 
 }
 
-void LukeSkywalker::update(Input * input) 
+void LukeSkywalker::update(Input * input, Maze * maze)
 {
 	//x = 290;
 	//y = 250;
@@ -57,7 +57,7 @@ void LukeSkywalker::update(Input * input)
 
 	if (input_->getKeyDown(sf::Keyboard::Left))
 	{
-		/*if (maze_->getWalls(playerSpawnIndex_.getX() , playerSpawnIndex_.getY()) != 10 )
+		/*if (maze->getWalls(playerSpawnIndex_.getX() , playerSpawnIndex_.getY()) != 10 )
 		{
 			x = x - 40;
 			imageSprite_.move(sf::Vector2f((float)x, (float)y));

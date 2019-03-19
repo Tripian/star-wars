@@ -48,7 +48,7 @@ void Yoda::init(const std::string& resourcePath)
 
 }
 
-void Yoda::update(Input * input) 
+void Yoda::update(Input * input, Maze * maze)
 {
 	input_->update(window_);
 
